@@ -19,6 +19,9 @@ const render = () => {
   window.requestAnimationFrame(() => {
     const main = document.querySelector('.todoapp')
     const newMain = registry.renderRoot(main, state)
+    // main.replaceWith(newMain)
+    // main 을 newMain으로 변경 했던 부분을 
+    // applyDiff(현재 DOM노드, 실제 DOM 노드, 새로운 가상 DOM 노드의 부모)
     applyDiff(document.body, main, newMain)
   })
 }
